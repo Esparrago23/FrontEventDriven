@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Orders Dashboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Service Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.order_id }}</td>
+          <td>{{ order.service_name }}</td>
+          <td>{{ order.description }}</td>
+          <td>{{ order.status }}</td>
+          <td>
+            <button *ngIf="order.status === 'pending'" (click)="payOrder(order.order_id)">
+              Contract
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
